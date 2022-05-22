@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire de saisie</title>
+</head>
+<body>
+   <h1> Saisie d'une nouvelle période ou date </h1>
+     {% if id != '' %}
+      <form method="post" action="/antiquite/updatetraitement/{{id}}/">
+     {% else %}
+        <form method="post" action="/antiquite/traitement/">
+     {% endif %}
+     {% csrf_token %}
+     {{form.as_ul}}
+     <input type="submit" value="envoyez les données"/>
+   </form>
+</body>
+</html>

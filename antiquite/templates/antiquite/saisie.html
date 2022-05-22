@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire</title>
+</head>
+<body>
+<h1> saisie d'information </h1>
+
+<form action = "/antiquite/traitement/"  method="POST">
+    {% csrf_token %}
+    <label for="periode"> Periode :</label>
+    <input type="text" periode="periode"/>
+    <input type="submit" value="envoyer"/>
+    <label for="peuple"> Peuple :</label>
+    <input type="text" surname="peuple"/>
+    <input type="submit" value="envoyer"/>
+    <label for="evenement_associe"> Evenement_associe :</label>
+    <input type="evenement_associe" age="evenement_associe"/>
+    <input type="submit" value="envoyer"/>
+    <label for="nombre_de_mots"> Nombre_de_mots</label>
+    <input type="text" nombre_de_mots="nombre_de_mots"/>
+    <input type="submit" value="envoyer"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'antiquites/style2.css' %}" type="text/css"/>
+    <style>
+          .button {
+            background-color: #1c87c9;
+            border: none;
+            color: black;
+            padding: 20px 34px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20 px;
+            margin: 4px 2px;
+            cursor: pointer;
+           }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenue au sein de la mine d'or <p>antiquitaire 4.0 ( Visite gratuite :p )</p></h2>
+        <h6> "Le savoir est le plus intellectuel des virus, dommage qu'il ne soit pas très contagieux"</h6>
+        <h6> "Le savoir est une couronne sur la tête, tandis que la richesse n'est qu'un joug sur le cou", Proverbe Persan</h6>
+        <a href="http://127.0.0.1:8000/antiquite/frise/" class="button">Informez-vous!</a>
+        <a href="/antiquite/ajout/"> Ajoutez une date </a>
+        <a href="/antiquite/ajouthomme/"> Ajoutez un homme </a>
+        <ol>
+            {% for d in liste %}
+                <li> {{d}} <a href="/antiquite/dateAjoute/{{d.id}}"> dateAjoute </a> <a href="/antiquite/update/{{d.id}}"> update </a> <a href="/antiquite/delete/{{d.id}}"> delete </a> </li>
+            {% endfor %}
+        </ol>
+    </div>
+
+</body>
+</html>
