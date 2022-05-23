@@ -23,7 +23,7 @@ urlpatterns = [
 
     path('ajouthomme/',homme_views.ajout),
     path('traitementhomme/',homme_views.traitement),
-    path('updatehomme/<int:id>/',views.update),
+    path('updatehomme/<int:id>/',homme_views.update),
     path('updatetraitementhomme/<int:id>/',homme_views.updatetraitement),
     path('deletehomme/<int:id>/',homme_views.delete),
 
