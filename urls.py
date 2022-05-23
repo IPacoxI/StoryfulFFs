@@ -1,30 +1,26 @@
-from django.urls import path
-from . import views, homme_views
+"""storyful URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+
+from django.contrib import admin
+from django.urls import path,include
+from antiquite.views import index
 
 urlpatterns = [
-
-    # pages pour antiquite
-    path('', views.index), # path('indexantiquite/', views.index) ?
-    path('ajout/', views.ajout),
-    path('traitement/', views.traitement),
-    path('dateAjoute/<int:id>/', views.dateAjoute), # n° Id est dans url
-    path('update/<int:id>/', views.update),
-    path('updatetraitement/<int:id>/', views.updatetraitement),
-    path('delete/<int:id>/', views.delete),
-
-
-    path('frise/', views.frise),
-    path('saisie/', views.saisie),
-
-
-    path('ajout/', views.ajout),
-
-    # pages pour homme
-
-    path('ajouthomme/',homme_views.ajout),
-    path('traitementhomme/',homme_views.traitement),
-    path('updatehomme/<int:id>/',homme_views.update),
-    path('updatetraitementhomme/<int:id>/',homme_views.updatetraitement),
-    path('deletehomme/<int:id>/',homme_views.delete),
+    path('admin/', admin.site.urls),
+    path('', index, name='index'),
+    path('antiquite/',include('antiquite.urls')),
 
 ]
