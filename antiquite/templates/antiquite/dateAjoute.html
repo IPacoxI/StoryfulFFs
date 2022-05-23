@@ -11,7 +11,9 @@
         {{antiquite.resume}}
     </p>
     {% for i in homme %}
-    <li>  {{i}} </li>
+    <li>  {{i}} <a href = "/antiquite/updatehomme/{{i.id}}/" > Update </a>
+     <a       href = "/antiquite/deletehomme/{{i.id}}/" > Delete </a>
+    </li>
     {% endfor %}
 </body>
 </html>
