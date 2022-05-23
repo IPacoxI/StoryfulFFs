@@ -13,7 +13,7 @@ def dateAjoute(request, id):         # nouvel usage de traitement.html pour affi
 
 def update(request, id):
     datei = models.Homme.objects.get(pk=id)
-    form = HommeForm(datei.antiq())
+    form = HommeForm(datei.dico())
     return render(request,"homme/ajout.html",{"form":form, "id": id})
 
 def updatetraitement(request, id):
