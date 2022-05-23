@@ -7,7 +7,7 @@ from . import models
 # Create your views here.
 
 
-def dateAjoute(request, id):         # nouvel usage de traitement.html pour afficher les nouveaux ajouts utilisateurs dans la base de données
+def dateAjoute(request, id):         # pour afficher les nouveaux ajouts utilisateurs dans la base de données
     date = models.Homme.objects.get( pk = id)
     return render(request, "homme/dateAjoute.html", {"date": date})   # où traitement ==> "affiche(.html)" ==> (dateAjoute)
 
