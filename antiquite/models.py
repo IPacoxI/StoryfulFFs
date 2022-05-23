@@ -22,5 +22,6 @@ class Homme(models.Model):
     def __str__(self):
         return "homme"
 
-
-    #resume = models.TextField(null = True, blank = True)
+    def dico(self):
+        return {"epoque_appartenance" : self.epoque_appartenance}
+ 
